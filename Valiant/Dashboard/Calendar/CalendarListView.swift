@@ -230,11 +230,7 @@ struct CalendarListView: View {
                             Image("no_data")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            
-                            Text("No future events found")
-                                .font(.custom("HelveticaNeue-Regular", size: 14.0))
-                                .foregroundColor(Color(hex:"#262626"))
+                                .frame(width: 250, height: 250)
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)

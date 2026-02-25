@@ -33,7 +33,7 @@ struct DashBoardView: View {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.clear)
-                                        .frame(width: max(0, geometry.size.width - 60), height: 190.0)
+                                        .frame(width: max(0, geometry.size.width - 60), height: 150.0)
                                         .background(LinearGradient(
                                             stops: [
                                                 Gradient.Stop(color: Color(red: 226.0 / 255.0, green: 231.0 / 255.0, blue: 241.0 / 255.0), location: 0.0),
@@ -49,7 +49,7 @@ struct DashBoardView: View {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.clear)
-                                        .frame(width: max(0, geometry.size.width - 60), height: 190.0)
+                                        .frame(width: max(0, geometry.size.width - 60), height: 150.0)
                                         .background(LinearGradient(
                                             stops: [
                                                 Gradient.Stop(color: Color(red: 226.0 / 255.0, green: 231.0 / 255.0, blue: 241.0 / 255.0), location: 0.0),
@@ -62,7 +62,6 @@ struct DashBoardView: View {
                                         .padding(.horizontal, 20)
                                 }
                             }
-                            .frame(height: 380.0)
                             
                             MenuGridView(screenWidth: geometry.size.width) { index in
                                 switch index {
@@ -238,7 +237,7 @@ struct DashBoardView: View {
     
     // MARK: - Upcoming SPOG Events Section
     private var upcomingSPOGEventsSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading) {
             // Section Title
             Text("UPCOMING SPOG CALENDAR EVENTS")
                 .font(.custom("HelveticaNeue-Regular", size: 14.0))
@@ -258,6 +257,7 @@ struct DashBoardView: View {
                 }
                 .padding(.horizontal, 4)
             }
+            .padding(.top, 5)
             
             // See All Alerts Link
             Button(action: {
@@ -276,7 +276,7 @@ struct DashBoardView: View {
     
     // MARK: - Latest SPOG Alerts Section
     private var upcomingPresidentsMessageSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading) {
             // Section Title
             Text("LATEST PRESIDENT’S MESSAGE")
                 .font(.custom("HelveticaNeue-Regular", size: 14.0))
@@ -296,7 +296,8 @@ struct DashBoardView: View {
                 }
                 .padding(.horizontal, 4)
             }
-            
+            .padding(.top, 5)
+
             // See All Alerts Link
             Button(action: {
                 viewModel.showMessageView.toggle()

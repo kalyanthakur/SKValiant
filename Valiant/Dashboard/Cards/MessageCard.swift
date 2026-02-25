@@ -25,7 +25,7 @@ struct MessageCard: View {
                             image
                                 .resizable()
                                 .cornerRadius(8)
-                                .frame(width: 110, height: 90)
+                                .frame(width: 100, height: 90)
                         case .failure:
                             // Fallback to SPOG logo if image fails to load
                             Image("SPOG_logo")

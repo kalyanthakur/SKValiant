@@ -21,6 +21,10 @@ public struct FloatingMenuActionButton: View {
             if isSelected {
                 ForEach(floatingMenuItems) { item in
                     Button {
+                        // Haptic feedback
+                        let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
+                        impactFeedback.impactOccurred()
+
                         withAnimation(.easeIn(duration: 0.2)) {
                             isSelected.toggle()
                         }

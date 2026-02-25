@@ -13,25 +13,17 @@ struct LatestMessageCard: View {
     @ObservedObject var viewModel: MessageViewModel
     
     var body: some View {
-        VStack {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: width-32, height: 250.0)
-                    .background(LinearGradient(
-                        stops: [
-                            Gradient.Stop(color: Color(red: 226.0 / 255.0, green: 231.0 / 255.0, blue: 241.0 / 255.0), location: 0.0),
-                            Gradient.Stop(color: Color(red: 196.0 / 255.0, green: 205.0 / 255.0, blue: 226.0 / 255.0), location: 1.0)],
-                        startPoint: .bottom,
-                        endPoint: .bottomLeading))
-                    .cornerRadius(2)
-                
-                VStack (alignment: .leading) {
-                    SingleMessageCard(message: message, width: width-32, viewModel: viewModel)
-                        .padding(8)
-                }
-            }
+        VStack (alignment: .leading) {
+            SingleMessageCard(message: message, width: width-32, viewModel: viewModel)
+                .padding(8)
         }
+        .background(LinearGradient(
+            stops: [
+                Gradient.Stop(color: Color(red: 226.0 / 255.0, green: 231.0 / 255.0, blue: 241.0 / 255.0), location: 0.0),
+                Gradient.Stop(color: Color(red: 196.0 / 255.0, green: 205.0 / 255.0, blue: 226.0 / 255.0), location: 1.0)],
+            startPoint: .bottom,
+            endPoint: .bottomLeading))
+        .cornerRadius(2)
     }
 }
 
@@ -71,7 +63,7 @@ struct SingleMessageCard: View {
                     case .success(let image):
                         image
                             .resizable()
-                            .frame(width: width-32, height: 130)
+                            .frame(width: width-32, height: (width-32)/2)
                     case .failure:
                         // Fallback to SPOG logo if image fails to load
                         Image("SPOG_logo")

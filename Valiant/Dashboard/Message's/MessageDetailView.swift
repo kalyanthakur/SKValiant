@@ -54,7 +54,7 @@ struct MessageDetailView: View {
                                         image
                                             .resizable()
                                             .cornerRadius(8)
-                                            .frame(width: geometry.size.width-32, height: geometry.size.width-200)
+                                            .frame(width: geometry.size.width-32, height: (geometry.size.width-32)/2)
                                     case .failure:
                                         // Fallback to SPOG logo if image fails to load
                                         Image("SPOG_logo")
